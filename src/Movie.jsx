@@ -8,6 +8,8 @@ export function Movie({ movie }) {
         <h3 className="movie-name">{movie?.name}</h3>
         <p className="movie-rating">⭐ {movie?.rating}</p>
       </div>
+      {/* Clue - Hook + Conditional rendering */}
+      <button>Toggle Summary</button>
       <p className="movie-summary">{movie?.summary}</p>
     </div>
   );

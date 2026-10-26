@@ -19,7 +19,7 @@ export default function App() {
 
       <Users />
       {/* <Movie /> */}
-      {/* <MovieList /> */}
+      <MovieList />
 
       {/* <Counter /> */}
     </div>
