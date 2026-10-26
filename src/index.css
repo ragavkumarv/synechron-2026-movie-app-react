@@ -68,3 +68,8 @@
   gap: 1rem;
   justify-content: space-around;
 }
+
+.counter-container {
+  display: flex;
+  flex-direction: column;
+}

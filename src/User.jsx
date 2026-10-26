@@ -1,3 +1,5 @@
+import { Counter } from "./Counter";
+
 // Presentation
 export function User({ name, pic }) {
   return (
@@ -6,6 +8,7 @@ export function User({ name, pic }) {
       <p>
         Hello, <span>{name}</span> 🎉 🎉
       </p>
+      <Counter />
     </div>
   );
 }
