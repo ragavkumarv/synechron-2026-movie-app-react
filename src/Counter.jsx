@@ -21,7 +21,11 @@ export function Counter() {
       {/* Conditional rendering */}
       {/* {5 < 4 ? <h1>Wow</h1> : <p>Cool</p>} */}
 
-      {/* Task - Like is more than dislike by 10 then h2 (Your awesome 🎉🎉) */}
+      {/* Task - Like is more than dislike by 10 then h2 (You are awesome 🎉🎉) */}
+      {like - disLike >= 10 ? <h3>You are awesome 🎉🎉</h3> : null}
+
+      {/* Short hand */}
+      {like - disLike >= 10 && <h3>You are awesome 🎉🎉</h3>}
     </div>
   );
 }

@@ -1,6 +1,9 @@
+import { useState } from "react";
+
 // Presentation
 export function Movie({ movie }) {
   // Code
+  const [show, setShow] = useState(true);
   return (
     <div className="movie-container">
       <img src={movie?.poster} alt={movie?.name} />
@@ -10,8 +13,8 @@ export function Movie({ movie }) {
       </div>
       {/* Task - Toggle Summary */}
       {/* Clue - Hook + Conditional rendering */}
-      <button>Toggle Summary</button>
-      <p className="movie-summary">{movie?.summary}</p>
+      <button onClick={() => setShow(!show)}>Toggle Summary</button>
+      {show && <p className="movie-summary">{movie?.summary}</p>}
     </div>
   );
 }
