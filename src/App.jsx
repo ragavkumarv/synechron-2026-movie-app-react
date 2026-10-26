@@ -11,7 +11,9 @@ export default function App() {
         <Msg name={nm} />
       ))} */}
 
-      <Users />
+      {/* <Users /> */}
+      {/* <Movie /> */}
+      <MovieList />
     </div>
   );
 }
@@ -153,10 +155,28 @@ function MovieList() {
       rating: 8.8,
     },
   ];
+
   // Code
+  return (
+    <section className="movie-list-container">
+      {movies.map((mv) => (
+        <Movie movie={mv} />
+      ))}
+    </section>
+  );
 }
 
 // Presentation
-function Movie() {
+function Movie({ movie }) {
   // Code
+  return (
+    <div className="movie-container">
+      <img src={movie?.poster} alt={movie?.name} />
+      <div className="movie-spec-container">
+        <h3 className="movie-name">{movie?.name}</h3>
+        <p className="movie-rating">⭐ {movie?.rating}</p>
+      </div>
+      <p className="movie-summary">{movie?.summary}</p>
+    </div>
+  );
 }
