@@ -1,0 +1,28 @@
+.app-container {
+  font-family: sans-serif;
+  text-align: center;
+
+  span {
+    /* color: crimson; */
+  }
+}
+
+.user-container {
+  img {
+    height: 8rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  span {
+    font-weight: 900;
+    font-style: italic;
+  }
+}
+
+.users-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
