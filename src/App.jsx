@@ -28,3 +28,9 @@ export default function App() {
     </div>
   );
 }
+
+// Task - Create the routes
+// 1. /users -> Users
+// 2. /films -> MovieList
+// 3. /color-game -> ColorGame
+// 4. / -> Home
