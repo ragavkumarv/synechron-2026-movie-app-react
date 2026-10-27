@@ -93,10 +93,20 @@ export function MovieList() {
 
   // Code
   return (
-    <section className="movie-list-container">
-      {movies.map((mv) => (
-        <Movie movie={mv} />
-      ))}
-    </section>
+    <main>
+      <div className="add-movie-container">
+        <input type="text" placeholder="Name" />
+        <input type="text" placeholder="Poster" />
+        <input type="text" placeholder="Rating" />
+        <input type="text" placeholder="Summary" />
+        <button>Add Movie</button>
+      </div>
+
+      <section className="movie-list-container">
+        {movies.map((mv) => (
+          <Movie movie={mv} />
+        ))}
+      </section>
+    </main>
   );
 }
