@@ -89,3 +89,10 @@
   margin: 0 auto;
   margin-bottom: 1rem;
 }
+
+nav > ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  padding: 0px;
+}

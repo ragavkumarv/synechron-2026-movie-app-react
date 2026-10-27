@@ -1,10 +1,10 @@
 // Named import
+import { ColorGame } from "./ColorGame";
 import "./index.css";
 import { MovieList } from "./MovieList";
-import { Msg } from "./Msg";
 import { Users } from "./Users";
-import { Counter } from "./Counter";
-import { ColorGame } from "./ColorGame";
+
+import { NavLink, Route, Routes } from "react-router";
 
 // Only one item per file
 export default function App() {
@@ -14,17 +14,34 @@ export default function App() {
 
   return (
     <div className="app-container">
-      {/* {names.map((nm) => (
-        <Msg name={nm} /> 
-      ))} */}
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="users">Users</NavLink>
+            </li>
+            <li>
+              <NavLink to="films">Films</NavLink>
+            </li>
+            <li>
+              <NavLink to="color-game">Color Game</NavLink>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-      {/* <Users /> */}
-      {/* <Movie /> */}
-      <MovieList />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="users" element={<Users />} />
+        <Route path="films" element={<MovieList />} />
+        <Route path="color-game" element={<ColorGame />} />
 
-      {/* <Counter /> */}
-
-      {/* <ColorGame /> */}
+        {/* * -> anything (Default case) */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
@@ -34,3 +51,11 @@ export default function App() {
 // 2. /films -> MovieList
 // 3. /color-game -> ColorGame
 // 4. / -> Home
+
+function NotFound() {
+  return <h1>404 Not found</h1>;
+}
+
+function Home() {
+  return <h1>Welcome to the movie app 🎉🎉</h1>;
+}
