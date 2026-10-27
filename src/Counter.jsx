@@ -6,10 +6,12 @@ import { useState } from "react";
 // useState, useContext, useEffect .. etc - Hook  - fn - 'use'
 //  C = f(S) | State changes Component re-renders
 //  y = f(x)
+// React remembers state between the re-renders
 export function Counter() {
   // let like = 0;
   const [like, setLike] = useState(0);
   const [disLike, setDisLike] = useState(0);
+  console.log("re-rendering");
   return (
     <div className="counter-container">
       <div>
@@ -18,6 +20,9 @@ export function Counter() {
       </div>
       <progress max={like + disLike} value={like}></progress>
 
+      {/* <p>{like}</p>
+      <p>{like}</p>
+      <p>{like}</p> */}
       {/* Conditional rendering */}
       {/* {5 < 4 ? <h1>Wow</h1> : <p>Cool</p>} */}
 
