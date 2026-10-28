@@ -71,5 +71,18 @@ export default function App() {
 function MovieDetails() {
   const { id } = useParams();
 
-  return <h1> Movie Details Page - {id} </h1>;
+  return (
+    <h1>
+      Movie Details Page - {id}
+      <iframe
+        width="966"
+        height="543"
+        src="https://www.youtube.com/embed/298N5AzV9-s"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </h1>
+  );
 }
