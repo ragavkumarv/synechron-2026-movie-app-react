@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MovieCounter } from "./MovieCounter";
 import { cool } from "./Fun";
+import { useNavigate } from "react-router";
 
 // Presentation
 // Pure Component - Same Input - Same Output
@@ -17,6 +18,9 @@ export function Movie({ movie }) {
     // fontStyle: "italic",
   };
 
+  // navigate - fn
+  const navigate = useNavigate();
+
   return (
     <div className="movie-container">
       <img src={movie?.poster} alt={movie?.name} />
@@ -29,6 +33,7 @@ export function Movie({ movie }) {
       {/* Task - Toggle Summary */}
       {/* Clue - Hook + Conditional rendering */}
       <button onClick={() => setShow(!show)}>Toggle Summary</button>
+      <button onClick={() => navigate("/movies/0")}>Info</button>
       {show && <p className="movie-summary">{movie?.summary}</p>}
       <MovieCounter />
     </div>

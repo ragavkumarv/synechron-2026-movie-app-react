@@ -6,7 +6,7 @@ export function MovieList({ movieList }) {
   return (
     <main>
       <section className="movie-list-container">
-        {movieList.map((mv) => (
+        {movieList.map((mv, idx) => (
           <Movie movie={mv} />
         ))}
       </section>
