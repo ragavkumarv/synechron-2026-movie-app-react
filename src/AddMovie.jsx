@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 
 export function AddMovie({ movieList, setMovieList }) {
   const [name, setName] = useState("");
@@ -45,14 +47,17 @@ export function AddMovie({ movieList, setMovieList }) {
         value={rating}
         onChange={(event) => setRating(event.target.value)}
       />
-      <input
-        type="text"
-        placeholder="Summary"
+
+      <TextField
+        variant="filled"
+        label="Summary"
         value={summary}
         onChange={(event) => setSummary(event.target.value)}
       />
 
-      <button onClick={addMovie}>Add Movie</button>
+      <Button variant="contained" onClick={addMovie}>
+        Add Movie
+      </Button>
     </div>
   );
 }
