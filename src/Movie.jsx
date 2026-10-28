@@ -8,7 +8,7 @@ import { useNavigate } from "react-router";
 
 // Task
 // rating > 8 -> green | else red
-export function Movie({ movie }) {
+export function Movie({ movie, id }) {
   // Code
   const [show, setShow] = useState(true);
 
@@ -33,7 +33,7 @@ export function Movie({ movie }) {
       {/* Task - Toggle Summary */}
       {/* Clue - Hook + Conditional rendering */}
       <button onClick={() => setShow(!show)}>Toggle Summary</button>
-      <button onClick={() => navigate("/movies/0")}>Info</button>
+      <button onClick={() => navigate(`/movies/${id}`)}>Info</button>
       {show && <p className="movie-summary">{movie?.summary}</p>}
       <MovieCounter />
     </div>
