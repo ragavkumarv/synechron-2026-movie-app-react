@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function MovieCounter() {
   const [like, setLike] = useState(0);
@@ -7,6 +7,30 @@ export function MovieCounter() {
   const incrementLike = () => {
     setLike(like + 1);
   };
+
+  // state or prop - call fn run
+  // useEffect(() => {
+  //   console.log("Like", like);
+  //   console.log("Dislike", disLike);
+  // });
+
+  // Dependencies array - only like changes
+  // componentDidUpdate
+  // useEffect(() => {
+  //   console.log("1. Like", like);
+  //   console.log("1. Dislike", disLike);
+  // }, [like]);
+
+  // useEffect(() => {
+  //   console.log("2. Like", like);
+  //   console.log("2. Dislike", disLike);
+  // }, [like, disLike]);
+
+  // componentDidMount - Dependencies array is empty
+  // useEffect(() => {
+  //   console.log("1. Like", like);
+  //   console.log("1. Dislike", disLike);
+  // }, []);
 
   return (
     <div className="movie-counter-container">
