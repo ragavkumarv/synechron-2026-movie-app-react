@@ -6,8 +6,10 @@ import "./index.css";
 import { MovieList } from "./MovieList";
 import { Users } from "./Users";
 
-import { NavLink, Route, Routes } from "react-router";
+import { NavLink, Route, Routes, useParams } from "react-router";
 import { INITIAL_MOVIES } from "./INITIAL_MOVIES";
+import { NotFound } from "./NotFound";
+import { Home } from "./Home";
 
 // Only one item per file
 export default function App() {
@@ -53,6 +55,9 @@ export default function App() {
           }
         />
 
+        {/* id -> path variable ->  /movies/100 | id = 100 */}
+        <Route path="movies/:id" element={<MovieDetails />} />
+
         <Route path="color-game" element={<ColorGame />} />
 
         {/* * -> anything (Default case) */}
@@ -62,24 +67,9 @@ export default function App() {
   );
 }
 
-// Task - Create the routes
-// 1. /users -> Users
-// 2. /films -> MovieList
-// 3. /color-game -> ColorGame
-// 4. / -> Home
+// Task - Print the movie name in the details page using `id`
+function MovieDetails() {
+  const { id } = useParams();
 
-function NotFound() {
-  return (
-    <div>
-      <h1>404 Not found</h1>
-      <img
-        src="https://assets-v2.lottiefiles.com/a/0295c0a4-3532-11ef-9f29-13073c8721a8/xgrJ1gZOP5.gif"
-        alt=""
-      />
-    </div>
-  );
-}
-
-function Home() {
-  return <h1>Welcome to the movie app 🎉🎉</h1>;
+  return <h1> Movie Details Page - {id} </h1>;
 }
