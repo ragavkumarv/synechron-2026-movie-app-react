@@ -96,3 +96,7 @@ nav > ul {
   gap: 1rem;
   padding: 0px;
 }
+
+.movie-details-content-container {
+  max-width: 50rem;
+}
