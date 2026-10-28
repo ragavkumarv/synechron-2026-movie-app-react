@@ -16,8 +16,8 @@ export function MovieList() {
   return (
     <main>
       <section className="movie-list-container">
-        {movieList.map((mv, idx) => (
-          <Movie movie={mv} id={idx} />
+        {movieList.map((mv) => (
+          <Movie movie={mv} id={mv?.id} />
         ))}
       </section>
     </main>

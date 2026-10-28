@@ -1,12 +1,16 @@
-import { useParams } from "react-router";
+import { useEffect, useState } from "react";
+import { NavLink, useParams } from "react-router";
 
 // Task - Print the movie name in the details page using `id`
-export function MovieDetails({ movieList }) {
+export function MovieDetails() {
   const { id } = useParams();
+  const [movie, setMovie] = useState({});
 
-  const movie = movieList[id];
-
-  console.log(movieList, movie);
+  useEffect(() => {
+    fetch(`https://6971d50b32c6bacb12c4aa19.mockapi.io/movies/${id}`)
+      .then((res) => res.json())
+      .then((data) => setMovie(data));
+  }, [id]);
 
   return (
     <div className="movie-details-container">
