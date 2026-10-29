@@ -18,9 +18,6 @@ export default function App() {
   const names = ["Praveen", "Sarvesh", "Adi", "Rithik"];
   console.log(names);
 
-  // Lifting the state up
-  const [movieList, setMovieList] = useState(INITIAL_MOVIES);
-
   return (
     <div className="app-container">
       <header>
@@ -48,19 +45,11 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="users" element={<Users />} />
-        <Route path="movies" element={<MovieList movieList={movieList} />} />
-        <Route
-          path="movies/add"
-          element={
-            <AddMovie movieList={movieList} setMovieList={setMovieList} />
-          }
-        />
+        <Route path="movies" element={<MovieList />} />
+        <Route path="movies/add" element={<AddMovie />} />
 
         {/* id -> path variable ->  /movies/100 | id = 100 */}
-        <Route
-          path="movies/:id"
-          element={<MovieDetails movieList={movieList} />}
-        />
+        <Route path="movies/:id" element={<MovieDetails />} />
 
         <Route path="color-game" element={<ColorGame />} />
 
