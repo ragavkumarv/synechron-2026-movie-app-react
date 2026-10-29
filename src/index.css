@@ -100,3 +100,8 @@ nav > ul {
 .movie-details-content-container {
   max-width: 50rem;
 }
+
+.movie-action-container {
+  display: flex;
+  justify-content: space-between;
+}

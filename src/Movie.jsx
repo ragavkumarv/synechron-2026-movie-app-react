@@ -35,10 +35,11 @@ export function Movie({ movie, id, deleteButton }) {
       <button onClick={() => setShow(!show)}>Toggle Summary</button>
       <button onClick={() => navigate(`/movies/${id}`)}>Info</button>
       {show && <p className="movie-summary">{movie?.summary}</p>}
-      <MovieCounter />
-
-      {/* Render props */}
-      {deleteButton}
+      <div className="movie-action-container">
+        <MovieCounter />
+        {/* Render props */}
+        {deleteButton}
+      </div>
     </div>
   );
 }

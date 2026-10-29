@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { Movie } from "./Movie";
+import IconButton from "@mui/material/IconButton";
+import Stack from "@mui/material/Stack";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 // Hooks will only work inside component
 export function MovieList() {
@@ -36,7 +39,13 @@ export function MovieList() {
             movie={mv}
             id={mv?.id}
             deleteButton={
-              <button onClick={() => deleteMovie(mv?.id)}>Delete 🗑️</button>
+              <IconButton
+                color="error"
+                aria-label="delete"
+                onClick={() => deleteMovie(mv?.id)}
+              >
+                <DeleteIcon />
+              </IconButton>
             }
           />
         ))}
