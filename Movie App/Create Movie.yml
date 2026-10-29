@@ -4,8 +4,18 @@ info:
   seq: 4
 
 http:
-  method: GET
+  method: POST
   url: https://6971d50b32c6bacb12c4aa19.mockapi.io/movies
+  body:
+    type: json
+    data: |2-
+        {
+          "name": "Vikram 2",
+          "poster": "https://upload.wikimedia.org/wikipedia/en/9/93/Vikram_2022_poster.jpg",
+          "rating": 8.4,
+          "summary": "Members of a black ops team must track and eliminate a gang of masked murderers.",
+          "trailer": "https://www.youtube.com/embed/OKBMCL-frPU"
+        }
   auth: inherit
 
 settings:

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import { useNavigate } from "react-router";
 
 export function AddMovie() {
   const [name, setName] = useState("");
@@ -8,6 +9,8 @@ export function AddMovie() {
   const [rating, setRating] = useState("");
   const [summary, setSummary] = useState("");
   const [trailer, setTrailer] = useState("");
+
+  const navigate = useNavigate();
 
   const addMovie = () => {
     const newMovie = {
@@ -30,7 +33,9 @@ export function AddMovie() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-      });
+        navigate("/movies");
+      })
+      .catch((err) => console.log(err));
 
     // Task
     // On Success we need to navigate to /movies page

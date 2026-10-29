@@ -8,7 +8,7 @@ import { useNavigate } from "react-router";
 
 // Task
 // rating > 8 -> green | else red
-export function Movie({ movie, id }) {
+export function Movie({ movie, id, deleteButton }) {
   // Code
   const [show, setShow] = useState(true);
 
@@ -36,6 +36,9 @@ export function Movie({ movie, id }) {
       <button onClick={() => navigate(`/movies/${id}`)}>Info</button>
       {show && <p className="movie-summary">{movie?.summary}</p>}
       <MovieCounter />
+
+      {/* Render props */}
+      {deleteButton}
     </div>
   );
 }

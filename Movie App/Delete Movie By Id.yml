@@ -1,0 +1,15 @@
+info:
+  name: Delete Movie By Id
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: https://6971d50b32c6bacb12c4aa19.mockapi.io/movies/128
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
